@@ -15,26 +15,24 @@ public class FileCopy {
 			try {
 				copyFile(f,nf);
 			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
 	static void copyFile(File src,File dest) throws IOException {
 		Scanner sc=new Scanner(src);
-		//System.out.println(sc.nextLine());
 		if(!dest.exists()) {
 			dest.createNewFile();
 		}
-		BufferedWriter br=new BufferedWriter(new FileWriter(dest,true));
+
+		BufferedWriter br=new BufferedWriter(new FileWriter(dest,false));
 		while(sc.hasNextLine()) {
-			System.out.println("hasnext");
-			String n=sc.nextLine();
-			System.out.println(n);
+			String n=sc.nextLine()+"\n";
 			br.write(n);
+			br.newLine();
 		}
+		br.flush();
 	}
 }
