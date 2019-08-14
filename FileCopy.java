@@ -22,6 +22,7 @@ public class FileCopy {
 		}
 	}
 	static void copyFile(File src,File dest) throws IOException {
+		System.out.println("Copying contents of "+src.getPath()+" to "+dest.getPath());
 		Scanner sc=new Scanner(src);
 		if(!dest.exists()) {
 			dest.createNewFile();
