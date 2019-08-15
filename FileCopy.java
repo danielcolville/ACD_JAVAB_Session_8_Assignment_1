@@ -34,6 +34,6 @@ public class FileCopy {
 			br.write(n);
 			br.newLine();
 		}
-		br.flush();
+		br.close();
 	}
 }
